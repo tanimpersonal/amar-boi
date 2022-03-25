@@ -10,3 +10,13 @@ img{
     padding: 20px;
     border-radius: 20px;
 }
+.text .icon{
+    width: 10%;
+}
+.button{
+    display: flex;
+    align-items: center;
+    background-color: bisque;
+    justify-content: center;
+    border-radius: 20px;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import './ProductShow.css';
+import {ShoppingCartIcon} from '@heroicons/react/solid'
 const ProductShow = ({addToCart,book}) => {
     const {name,img,price,id}=book;
     return (
@@ -10,7 +11,10 @@ const ProductShow = ({addToCart,book}) => {
            <div className="text">
                <p>{name.slice(0,15)+'...'}</p>
                <p>Price: ${price}</p>
-               <button onClick={()=>addToCart(img,price,id)}>Add To Cart</button>
+               <div className="button">
+               <button className='cart-button' onClick={()=>addToCart(img,price,id)}>Add To Cart</button>
+              <ShoppingCartIcon className='icon'></ShoppingCartIcon>
+               </div>
            </div>
         </div>
     );

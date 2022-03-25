@@ -1,21 +1,13 @@
 import React from 'react';
 import './Cart.css';
+import CartShow from '../CartShow/CartShow';
 const Cart = (props) => {
     const cartArray= props.cartArray;
     console.log(cartArray);
     return (
         <div>
             {
-                cartArray.map(book=>{
-                    return <div className='cart-div'>
-                        <div className="image">
-                        <img src={book.img} alt="" />
-                        </div>
-                        <div className="price">
-                            <p>${book.price}</p>
-                        </div>
-                    </div>
-                })
+                cartArray.map(book=> <CartShow key={book.id} book={book}></CartShow>)
             }
         </div>
     );

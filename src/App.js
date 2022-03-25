@@ -23,6 +23,9 @@ function App() {
       }
     }
   }
+  const random= () => {
+    
+  }
   return (
     <section>
       <h1>Amar Boi er Shop</h1>
@@ -34,7 +37,7 @@ function App() {
       </div>
       <div className="cart">
         <Cart cartArray= {cartArray}></Cart>
-        <button>Choose One</button>
+        <button onClick={random}>Choose One</button>
         <button>Clear</button>
       </div>
       </div>
