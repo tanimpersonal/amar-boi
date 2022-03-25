@@ -1,0 +1,12 @@
+.image{
+    width: 80%;
+}
+img{
+    border-radius: 20px;
+    width: 100%;
+}
+.all-product{
+    background-color: antiquewhite;
+    padding: 20px;
+    border-radius: 20px;
+}

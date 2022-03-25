@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import './App.css';
+import Cart from './Components/Cart/Cart';
+import ProductShow from './Components/ProductShow/ProductShow';
 function App() {
   const books=[
     {name:'Cryptography and Network Security: Principles and Practice', id:1, price: 90, stock:20, img: 'https://images-na.ssl-images-amazon.com/images/I/51mH5Z0iaIL._SX375_BO1,204,203,200_.jpg' },
@@ -11,12 +14,30 @@ function App() {
     {name:'Introduction to Elementary Particles', id:8, price: 90, stock:20, img: 'https://images-na.ssl-images-amazon.com/images/I/414pkaL1OQL._SX346_BO1,204,203,200_.jpg' },
     {name:'Spacetime and Geometry: An Introduction to General Relativity', id:9, price: 60, stock:20, img: 'https://images-na.ssl-images-amazon.com/images/I/41iUQ7tEp3L._SX356_BO1,204,203,200_.jpg' },
     {name:'General Relativity', id:10, price: 40, stock:20, img: 'https://images-na.ssl-images-amazon.com/images/I/41anGESlSHL._SX346_BO1,204,203,200_.jpg' }
-  ]
+  ];
+  const [cartArray,setCartArray]= useState([]);
+  const addToCart=(img,price,id)=>{
+    for(const book of books){
+      if(book.id==id){
+        setCartArray([...cartArray,book]);
+      }
+    }
+  }
   return (
     <section>
+      <h1>Amar Boi er Shop</h1>
+      <div className="products-cart">
+      <div className="product">
       {
-        books.map(book=> <div><img src={book.img} alt="" /></div> )
+        books.map(book=><ProductShow key={book.id} addToCart={addToCart} book={book}></ProductShow>)
       }
+      </div>
+      <div className="cart">
+        <Cart cartArray= {cartArray}></Cart>
+        <button>Choose One</button>
+        <button>Clear</button>
+      </div>
+      </div>
     </section>
   );
 }

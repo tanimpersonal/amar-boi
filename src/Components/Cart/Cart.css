@@ -1,0 +1,15 @@
+.cart-div{
+    display: flex;
+    background-color: aqua;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 20px 0;
+}
+.cart-div .image{
+    width: 20%;
+    border-radius: 60px;
+}
+.cart-div .image img{
+    width: 100%;
+    border-radius: 60px;
+}
