@@ -11,7 +11,7 @@ const MyModal = ({cartArray}) => {
     console.log(cartArray[item]);
     return (
         <>
-      <Button variant="primary" onClick={()=>{handleShow()}} disabled={cartArray.length<4}>
+      <Button className='ms-2 mb-2' variant="primary" onClick={()=>{handleShow()}} disabled={cartArray.length<4}>
         Show Random Product
       </Button>
 

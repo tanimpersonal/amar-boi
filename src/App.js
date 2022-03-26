@@ -46,7 +46,7 @@ function App() {
         <Cart cartArray= {cartArray}></Cart>
         <div className="button">
         <MyModal cartArray={cartArray}></MyModal> 
-        <button className='btn btn-primary ms-2' onClick={()=>clear()} disabled={cartArray.length<4}>Choose Again</button>
+        <button className='btn btn-primary ms-2 mb-2' onClick={()=>clear()} disabled={cartArray.length<4}>Choose Again</button>
         </div>
       </div>
       </div>
