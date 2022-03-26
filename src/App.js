@@ -46,12 +46,31 @@ function App() {
         <Cart cartArray= {cartArray}></Cart>
         <div className="button">
         <MyModal cartArray={cartArray}></MyModal> 
-        <button className='btn btn-primary' onClick={()=>clear()}>Clear</button>
+        <button className='btn btn-primary ms-2' onClick={()=>clear()} disabled={cartArray.length<4}>Choose Again</button>
         </div>
       </div>
       </div>
       <div className="question">
-        
+        <div className="first">
+        <div className="props">
+          <h1>Props: </h1>
+          <p>Props are used to pass data to components</p>
+          <p>Props are immutable</p>
+          <p>Props can make the component reusable</p>
+        </div>
+        <div className="state">
+          <h1>State: </h1>
+          <p>States are local.</p>
+          <p>States are mutable</p>
+          <p>States can not make the component reusable</p>
+        </div>
+        </div>
+        <div className="second">
+          <div className="third">
+            <h1>UseState</h1>
+            <p>useState has 2 things. One is initial state and the other is a function which does the work of changing the initial state. This function return the changed value of initial state.</p>
+          </div>
+        </div>
       </div>
     </section>
   );
