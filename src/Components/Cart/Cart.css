@@ -18,3 +18,15 @@
 .delete-button{
     width: 30%;
 }
+@media only screen and (max-width: 600px){
+    .cart-div{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+    }
+    .delete-button{
+        width: 50%;
+    }
+}

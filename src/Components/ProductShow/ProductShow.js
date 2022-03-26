@@ -12,7 +12,7 @@ const ProductShow = ({addToCart,book}) => {
                <p>{name.slice(0,15)+'...'}</p>
                <p>Price: ${price}</p>
                <div className="button">
-               <button className='cart-button' onClick={()=>addToCart(img,price,id)}>Add To Cart</button>
+               <button className='cart-button' onClick={()=>addToCart(id)}>Add To Cart</button>
               <ShoppingCartIcon className='icon'></ShoppingCartIcon>
                </div>
            </div>

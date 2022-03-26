@@ -2,6 +2,9 @@ import { useState } from 'react';
 import './App.css';
 import Cart from './Components/Cart/Cart';
 import ProductShow from './Components/ProductShow/ProductShow';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Modal } from 'react-bootstrap';
+import MyModal from './Components/MyModal/MyModal';
 function App() {
   const books=[
     {name:'Cryptography and Network Security: Principles and Practice', id:1, price: 90, stock:20, img: 'https://images-na.ssl-images-amazon.com/images/I/51mH5Z0iaIL._SX375_BO1,204,203,200_.jpg' },
@@ -16,15 +19,28 @@ function App() {
     {name:'General Relativity', id:10, price: 40, stock:20, img: 'https://images-na.ssl-images-amazon.com/images/I/41anGESlSHL._SX346_BO1,204,203,200_.jpg' }
   ];
   const [cartArray,setCartArray]= useState([]);
-  const addToCart=(img,price,id)=>{
-    for(const book of books){
-      if(book.id==id){
-        setCartArray([...cartArray,book]);
+  let[count,setCount]= useState(0);
+  const addToCart=(id)=>{   
+    for(const book of books){      
+       if(book.id===id){
+        setCount(++count);
+        book.count= count;
+         if(cartArray.length<=3){
+          setCartArray([...cartArray,book]);
+         }          
+        }
       }
-    }
-  }
+      }
   const random= () => {
-    
+    const min= 0;
+    const max= cartArray.length;
+    const randomNum= Math.floor(Math.random() * (max - min + 1)) + min;
+    console.log(cartArray);
+    console.log(randomNum);  
+                      
+  }
+  const clear=()=>{
+    setCartArray([]);
   }
   return (
     <section>
@@ -36,9 +52,11 @@ function App() {
       }
       </div>
       <div className="cart">
-        <Cart cartArray= {cartArray}></Cart>
-        <button onClick={random}>Choose One</button>
-        <button>Clear</button>
+        <Cart cartArray= {cartArray} random={random()}></Cart>
+        <div className="button">
+        <MyModal random={cartArray[random]} cartArray={cartArray}></MyModal> 
+        <button className='btn btn-primary' onClick={()=>clear()}>Clear</button>
+        </div>
       </div>
       </div>
     </section>

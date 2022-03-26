@@ -1,7 +1,7 @@
 import { TrashIcon } from '@heroicons/react/solid';
 import React from 'react';
 
-const CartShow = ({book}) => {
+const CartShow = ({book,random}) => {
     return (
         <div className='cart-div'>
                         <div className="image">

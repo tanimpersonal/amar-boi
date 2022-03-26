@@ -16,7 +16,6 @@ img{
 .button{
     display: flex;
     align-items: center;
-    background-color: bisque;
     justify-content: center;
     border-radius: 20px;
 }

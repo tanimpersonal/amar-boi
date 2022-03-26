@@ -9,4 +9,28 @@
   width: 90%;
   margin: 0 auto;
   gap: 20px;
+  height: 100%;
+}
+
+@media only screen and (max-width: 600px){
+  .products-cart{
+    width: 100%;
+    display: flex;
+    gap: 0px;
+  }
+  .product{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+  }
+  .cart{
+    width: 30%;
+    position: sticky;
+    top: 0px;
+    text-align: center;
+  }
+  .button{
+    flex-direction: column;
+  }
+  
 }
