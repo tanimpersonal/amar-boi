@@ -1,14 +1,22 @@
 .image{
     width: 80%;
+    
 }
 img{
     border-radius: 20px;
     width: 100%;
+
 }
 .all-product{
     background-color: antiquewhite;
     padding: 20px;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
 }
 .text .icon{
     width: 10%;
@@ -17,5 +25,9 @@ img{
     display: flex;
     align-items: center;
     justify-content: center;
+    justify-items: center;
     border-radius: 20px;  
+}
+.text{
+    bottom: 0px;
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import './Cart.css';
 import CartShow from '../CartShow/CartShow';
 
 const Cart = ({cartArray,random}) => {
