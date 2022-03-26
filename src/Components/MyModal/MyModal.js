@@ -23,7 +23,9 @@ const MyModal = ({cartArray}) => {
         }
         </Modal.Header>
         <Modal.Body>
-            
+            <div className="image">
+                <img src={cartArray[item]!==undefined?(cartArray[item].img):('')} alt="" />
+            </div>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
