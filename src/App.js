@@ -3,7 +3,6 @@ import './App.css';
 import Cart from './Components/Cart/Cart';
 import ProductShow from './Components/ProductShow/ProductShow';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Modal } from 'react-bootstrap';
 import MyModal from './Components/MyModal/MyModal';
 function App() {
   const books=[
@@ -20,7 +19,7 @@ function App() {
   ];
   const [cartArray,setCartArray]= useState([]);
   let[count,setCount]= useState(0);
-  const addToCart=(id)=>{   
+  const addToCart=(id)=>{  
     for(const book of books){      
        if(book.id===id){
         setCount(++count);
@@ -31,14 +30,6 @@ function App() {
         }
       }
       }
-  const random= () => {
-    const min= 0;
-    const max= cartArray.length;
-    const randomNum= Math.floor(Math.random() * (max - min + 1)) + min;
-    console.log(cartArray);
-    console.log(randomNum);  
-                      
-  }
   const clear=()=>{
     setCartArray([]);
   }
@@ -52,12 +43,15 @@ function App() {
       }
       </div>
       <div className="cart">
-        <Cart cartArray= {cartArray} random={random()}></Cart>
+        <Cart cartArray= {cartArray}></Cart>
         <div className="button">
-        <MyModal random={cartArray[random]} cartArray={cartArray}></MyModal> 
+        <MyModal cartArray={cartArray}></MyModal> 
         <button className='btn btn-primary' onClick={()=>clear()}>Clear</button>
         </div>
       </div>
+      </div>
+      <div className="question">
+        
       </div>
     </section>
   );

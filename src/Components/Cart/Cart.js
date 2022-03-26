@@ -2,7 +2,7 @@ import React from 'react';
 import CartShow from '../CartShow/CartShow';
 
 const Cart = ({cartArray,random}) => {
-    console.log(cartArray);
+    // console.log(cartArray);
     return (
         <div>
             {
